@@ -95,7 +95,7 @@ def ui_reorder_categories():
     yield "scripts"
 
 
-class Shared(sys.modules[__name__].__class__):
+class Shared:
     """
     this class is here to provide sd_model field as a property, so that it can be created and loaded on demand rather than
     at program startup.

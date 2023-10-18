@@ -5,6 +5,7 @@ import gradio as gr
 from modules import shared_cmd_options, shared_gradio_themes, options, shared_items, sd_models_types
 from modules.paths_internal import models_path, script_path, data_path, sd_configs_path, sd_default_config, sd_model_file, default_sd_model_file, extensions_dir, extensions_builtin_dir  # noqa: F401
 from modules import util
+from modules.shared_items import Shared
 
 cmd_opts = shared_cmd_options.cmd_opts
 parser = shared_cmd_options.parser
@@ -85,3 +86,5 @@ list_checkpoint_tiles = shared_items.list_checkpoint_tiles
 refresh_checkpoints = shared_items.refresh_checkpoints
 list_samplers = shared_items.list_samplers
 reload_hypernetworks = shared_items.reload_hypernetworks
+
+shared = Shared()
