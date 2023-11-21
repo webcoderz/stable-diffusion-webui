@@ -36,7 +36,8 @@ WORKDIR /work/stable-diffusion-webui
 # setup
 RUN python3 -mvenv venv && /work/stable-diffusion-webui/venv/bin/python -c "from launch import *; prepare_environment()" --skip-torch-cuda-test --no-download-sd-model
 
-
+# Set the PATH to include the virtual environment's bin directory
+ENV PATH="/work/stable-diffusion-webui/venv/bin:$PATH"
 
 ################################
 # entrypoint
