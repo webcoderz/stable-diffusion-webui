@@ -140,7 +140,8 @@ def run_pip(command, desc=None, live=default_command_live):
     if "ENABLE_UV" not in os.environ:
         return run(f'"{python}" -m pip {command} --prefer-binary{index_url_line}', desc=f"Installing {desc}", errdesc=f"Couldn't install {desc}", live=live)
     else:
-        return run(f'uv pip {command} --prefer-binary{index_url_line} --no-cache-dir', desc=f"Installing {desc}", errdesc=f"Couldn't install {desc}", live=live)
+        return run(f'uv pip {command}', desc=f"Installing {desc}", errdesc=f"Couldn't install {desc}", live=live)
+
 
 def check_run_python(code: str) -> bool:
     result = subprocess.run([python, "-c", code], capture_output=True, shell=False)
